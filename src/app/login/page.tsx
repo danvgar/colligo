@@ -1,4 +1,4 @@
-import ColligoLogo from '@/app/ui/colligo-logo';
+import ColligoLogo from '@/ui/colligo-logo';
 // import LoginForm from '@/app/ui/login-form';
 import { Metadata } from 'next';
 
