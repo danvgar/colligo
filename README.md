@@ -40,4 +40,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - Mantine
 - Shadcn
 - HeroIcons
-- 
+- Vercel Postgres SDK
