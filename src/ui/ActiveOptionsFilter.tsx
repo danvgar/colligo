@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Combobox, Input, Pill, PillsInput, useCombobox } from '@mantine/core';
 
-const groceries = [
+const tags = [
   'React',
   'Vue',
   'GitHub',
@@ -34,7 +34,7 @@ export function ActiveOptionsFilter() {
     </Pill>
   ));
 
-  const options = groceries
+  const options = tags
     .filter((item) => !value.includes(item))
     .map((item) => (
       <Combobox.Option value={item} key={item} active={value.includes(item)}>
