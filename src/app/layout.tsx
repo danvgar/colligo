@@ -2,6 +2,18 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+// core styles are required for all packages
+import '@mantine/core/styles.css';
+
+// other css files are required only if
+// you are using components from the corresponding package
+// import '@mantine/dates/styles.css';
+// import '@mantine/dropzone/styles.css';
+// import '@mantine/code-highlight/styles.css';
+// ...
+
+import { createTheme, MantineProvider, ColorSchemeScript } from '@mantine/core';
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -16,7 +28,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ColorSchemeScript defaultColorScheme="dark" />
+        <MantineProvider defaultColorScheme="dark">
+          {children}
+        </MantineProvider >
+      </body>
     </html>
   );
 }
