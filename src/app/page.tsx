@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { ActiveOptionsFilter } from "@/components/ActiveOptionsFilter";
-import LinkCard from "@/components/LinkCard";
+import { ActiveOptionsFilter } from "@/components/activeoptionsfilters";
+import LinkCard from "@/components/linkcard";
 
 export default function Home() {
   return (

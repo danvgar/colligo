@@ -75,10 +75,8 @@ const users = [
             dateAdded: '2023-01-18',
             votes: 15,
           },
-          // Add more links as needed
         ],
       },
-      // Add more lists as needed
     ],
   },
 ];
