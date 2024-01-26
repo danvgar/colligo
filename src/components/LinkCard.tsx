@@ -9,28 +9,38 @@ export default async function LinkCard() {
     console.log(`LinkCard Links: ${links}`)
 
     return (
-        <Card shadow="sm" padding="lg" radius="md" withBorder>
-            <Card.Section>
-                <Image
-                    src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
-                    height={160}
-                    alt="Norway"
-                />
-            </Card.Section>
+        links.map((link, i) => {
+            return (
+                <Card
+                    shadow="sm"
+                    padding="lg"
+                    radius="md"
+                    key={link.id}
+                    withBorder
+                    className="w-full">
+                    <Card.Section>
+                        <Image
+                            // src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
+                            height={160}
+                        // alt="Norway"
+                        />
+                    </Card.Section>
 
-            <Group justify="space-between" mt="md" mb="xs">
-                <Text fw={500}>Norway Fjord Adventures</Text>
-                <Badge color="pink">On Sale</Badge>
-            </Group>
+                    <Group justify="space-between" mt="md" mb="xs">
+                        <Text fw={500}>{link.title}</Text>
+                        {/* <Badge color="pink">On Sale</Badge> */}
+                    </Group>
 
-            <Text size="sm" c="dimmed">
-                {links.map(link => (<p key={link.id}>{link.description}</p>)
-                )}
-            </Text>
+                    <Text size="sm" c="dimmed">
+                        {link.description}
+                    </Text>
 
-            <Button color="blue" fullWidth mt="md" radius="md">
-                Book classic tour now
-            </Button>
-        </Card>
-    );
-}
+                    {/* Visit Link */}
+                    <Button color="blue" fullWidth mt="md" radius="md">
+                        Visit Site
+                    </Button>
+                </Card>
+            )
+        })
+    )
+};
