@@ -1,39 +1,12 @@
 const { db } = require('@vercel/postgres');
-const { users } = require('../src/lib/placeholder-data');
+const { links } = require('../src/lib/placeholder-data');
 const bcrypt = require('bcrypt');
 
 async function seedUsers(client) {
   try {
-    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-
-    // Create the "users" table if it doesn't exist
-    const createTable = await client.sql`
-      CREATE TABLE IF NOT EXISTS users (
-        id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
-        email TEXT NOT NULL UNIQUE,
-        password TEXT NOT NULL
-      );
-    `;
-
-    console.log(`Created "users" table`);
-
-    // Create the "lists" table if it doesn't exist
-    const createListsTable = await client.sql`
-      CREATE TABLE IF NOT EXISTS lists (
-        id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-        user_id UUID REFERENCES users(id) ON DELETE CASCADE,
-        name VARCHAR(255) NOT NULL
-      );
-    `;
-
-    console.log(`Created "lists" table`);
-
     // Create the "links" table if it doesn't exist
     const createLinksTable = await client.sql`
       CREATE TABLE IF NOT EXISTS links (
-        id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-        list_id UUID REFERENCES lists(id) ON DELETE CASCADE,
         title VARCHAR(255) NOT NULL,
         url TEXT NOT NULL,
         tags TEXT[] NOT NULL,
