@@ -1,7 +1,7 @@
 'use client'
 
 import { fetchLinks } from '@/lib/data';
-import { Card, Image, Text, Badge, Button, Group } from '@mantine/core';
+import { Card, Image, Text, Button, Group } from '@mantine/core';
 
 export default async function LinkCard() {
 

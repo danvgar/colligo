@@ -1,5 +1,5 @@
 // import Image from "next/image";
-import LinkCard from "@/components/linkcard";
+import LinkCard from "@/components/link-card";
 
 export default function Home() {
   return (
