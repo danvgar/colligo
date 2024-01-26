@@ -17,7 +17,7 @@ export default async function LinkCard() {
                     radius="md"
                     key={link.id}
                     withBorder
-                    className="w-full m-2">
+                    className="w-full m-2 transition ease-in-out delay-150 hover:scale-110 hover:bg-indigo-500 duration-300 motion-reduce:transition-none motion-reduce:hover:transform-none">
                     <Card.Section>
                         <Image
                             // src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
