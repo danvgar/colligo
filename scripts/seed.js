@@ -2,7 +2,7 @@ const { db } = require('@vercel/postgres');
 const { links } = require('../src/lib/placeholder-data');
 const bcrypt = require('bcrypt');
 
-async function seedUsers(client) {
+async function seedLinks(client) {
   try {
     // Create the "links" table if it doesn't exist
     const createLinksTable = await client.sql`
@@ -18,60 +18,22 @@ async function seedUsers(client) {
 
     console.log(`Created "links" table`);
 
-    // Insert data into the "users" table
-    const insertedUsers = await Promise.all(
-      users.map(async (user) => {
-        const hashedPassword = await bcrypt.hash(user.password, 10);
+    // Insert data into the "links" table
+    const insertedLinks = await Promise.all(
+      links.map(async (link) => {
         return client.sql`
-          INSERT INTO users (id, name, email, password)
-          VALUES (${user.id}, ${user.name}, ${user.email}, ${hashedPassword})
-          ON CONFLICT (id) DO NOTHING;
-        `;
+        INSERT INTO links (title, url, tags, description, dateAdded, votes)
+        VALUES (${link.title}, ${link.url}, ${link.tags}, ${link.description}, ${link.dateAdded}, ${link.votes})
+        ON CONFLICT DO NOTHING;
+      `;
       }),
     );
 
-    console.log(`Seeded ${insertedUsers.length} users`);
-
-    // Insert data into the "lists" and "links" tables
-    const seedListsAndLinks = await Promise.all(
-      users.map(async (user) => {
-        const insertedLists = await Promise.all(
-          user.lists.map(async (list) => {
-            return client.sql`
-          INSERT INTO lists (id, user_id, name)
-          VALUES (${list.id}, ${user.id}, ${list.name})
-          ON CONFLICT (id) DO NOTHING;
-        `;
-          }),
-        );
-
-        const insertedLinks = await Promise.all(
-          user.lists.flatMap((list) =>
-            list.links.map(async (link) => {
-              return client.sql`
-            INSERT INTO links (id, list_id, title, url, tags, description, dateAdded, votes)
-            VALUES (${link.id}, ${list.id}, ${link.title}, ${link.url}, ${link.tags}, ${link.description}, ${link.dateAdded}, ${link.votes})
-            ON CONFLICT (id) DO NOTHING;
-          `;
-            }),
-          ),
-        );
-
-        return {
-          lists: insertedLists,
-          links: insertedLinks,
-        };
-      }),
-    );
-
-    console.log(`Seeded ${seedListsAndLinks.length} lists and links`);
+    console.log(`Seeded ${insertedLinks.length} links`);
 
     return {
-      createTable,
-      createListsTable,
       createLinksTable,
-      users: insertedUsers,
-      listsAndLinks: seedListsAndLinks,
+      links: insertedLinks,
     };
   } catch (error) {
     console.error('Error seeding users:', error);
@@ -82,11 +44,9 @@ async function seedUsers(client) {
 async function main() {
   const client = await db.connect();
 
-  try {
-    await seedUsers(client);
-  } finally {
-    await client.end();
-  }
+  await seedLinks(client);
+
+  await client.end();
 }
 
 main().catch((err) => {
