@@ -1,5 +1,3 @@
-'use client'
-
 // import Image from "next/image";
 import LinkCard from "@/components/link-card";
 
