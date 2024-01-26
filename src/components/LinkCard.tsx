@@ -3,10 +3,10 @@
 import { fetchLinks } from '@/lib/data';
 import { Card, Image, Text, Badge, Button, Group } from '@mantine/core';
 
-export default function LinkCard() {
+export default async function LinkCard() {
 
-    const links = fetchLinks();
-    console.log(links)
+    const links = await fetchLinks();
+    console.log(`LinkCard Links: ${links}`)
 
     return (
         <Card shadow="sm" padding="lg" radius="md" withBorder>
@@ -24,6 +24,12 @@ export default function LinkCard() {
             </Group>
 
             <Text size="sm" c="dimmed">
+                {links.forEach(link => {
+                    return
+                    <p>
+                        {link.description}
+                    </p>
+                })}
             </Text>
 
             <Button color="blue" fullWidth mt="md" radius="md">

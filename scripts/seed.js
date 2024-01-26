@@ -7,6 +7,7 @@ async function seedLinks(client) {
     // Create the "links" table if it doesn't exist
     const createLinksTable = await client.sql`
       CREATE TABLE IF NOT EXISTS links (
+        id SERIAL PRIMARY KEY,
         title VARCHAR(255) NOT NULL,
         url TEXT NOT NULL,
         tags TEXT[] NOT NULL,

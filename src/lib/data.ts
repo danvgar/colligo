@@ -5,7 +5,7 @@ export async function fetchLinks() {
   try {
     const links = await sql<Link>`SELECT * FROM links`;
 
-    console.log(`Links: ${links.rows}`);
+    console.log('Links:', JSON.stringify(links.rows, null, 2));
     return links.rows;
 
   } catch (error) {
