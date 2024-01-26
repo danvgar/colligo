@@ -7,7 +7,7 @@ async function seedLinks(client) {
     // Create the "links" table if it doesn't exist
     const createLinksTable = await client.sql`
       CREATE TABLE IF NOT EXISTS links (
-        id SERIAL PRIMARY KEY,
+        id UUID PRIMARY KEY DEFAULT,
         title VARCHAR(255) NOT NULL,
         url TEXT NOT NULL,
         tags TEXT[] NOT NULL,
@@ -23,8 +23,8 @@ async function seedLinks(client) {
     const insertedLinks = await Promise.all(
       links.map(async (link) => {
         return client.sql`
-        INSERT INTO links (title, url, tags, description, dateAdded, votes)
-        VALUES (${link.title}, ${link.url}, ${link.tags}, ${link.description}, ${link.dateAdded}, ${link.votes})
+        INSERT INTO links (id, title, url, tags, description, dateAdded, votes)
+        VALUES (${link.id}, ${link.title}, ${link.url}, ${link.tags}, ${link.description}, ${link.dateAdded}, ${link.votes})
         ON CONFLICT DO NOTHING;
       `;
       }),
@@ -37,7 +37,7 @@ async function seedLinks(client) {
       links: insertedLinks,
     };
   } catch (error) {
-    console.error('Error seeding users:', error);
+    console.error('Error seeding links:', error);
     throw error;
   }
 }

@@ -1,8 +1,10 @@
 // This file contains placeholder data that you'll be replacing with real data in the Data Fetching chapter:
 // https://nextjs.org/learn/dashboard-app/fetching-data
+const { v4: uuidv4 } = require('uuid');
 
 const links = [
   {
+    id: uuidv4(),
     title: 'Google',
     url: 'https://www.google.com',
     tags: ['search', 'engine'],
@@ -11,6 +13,7 @@ const links = [
     votes: 120,
   },
   {
+    id: uuidv4(),
     title: 'GitHub',
     url: 'https://github.com',
     tags: ['code', 'repository'],
@@ -19,6 +22,7 @@ const links = [
     votes: 80,
   },
   {
+    id: uuidv4(),
     title: 'Stack Overflow',
     url: 'https://stackoverflow.com',
     tags: ['programming', 'community'],
@@ -27,6 +31,7 @@ const links = [
     votes: 45,
   },
   {
+    id: uuidv4(),
     title: 'Medium',
     url: 'https://medium.com',
     tags: ['blog', 'articles'],
@@ -35,6 +40,7 @@ const links = [
     votes: 60,
   },
   {
+    id: uuidv4(),
     title: 'TechCrunch',
     url: 'https://techcrunch.com',
     tags: ['tech', 'news'],
@@ -43,6 +49,7 @@ const links = [
     votes: 30,
   },
   {
+    id: uuidv4(),
     title: 'Ars Technica',
     url: 'https://arstechnica.com',
     tags: ['science', 'technology'],

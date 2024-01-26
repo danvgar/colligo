@@ -24,12 +24,8 @@ export default async function LinkCard() {
             </Group>
 
             <Text size="sm" c="dimmed">
-                {links.forEach(link => {
-                    return
-                    <p>
-                        {link.description}
-                    </p>
-                })}
+                {links.map(link => (<p key={link.id}>{link.description}</p>)
+                )}
             </Text>
 
             <Button color="blue" fullWidth mt="md" radius="md">
