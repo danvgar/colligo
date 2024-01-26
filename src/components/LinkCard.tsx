@@ -17,7 +17,7 @@ export default async function LinkCard() {
                     radius="md"
                     key={link.id}
                     withBorder
-                    className="w-full">
+                    className="w-full m-2">
                     <Card.Section>
                         <Image
                             // src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
