@@ -6,7 +6,9 @@
   </a> -->
 <h3 align="center">Colligo</h3>
   <p align="center">
-      <a href="https://colligo.vercel.app/">Colligo</a> is a full-stack web app for filtering, organizing, and sharing your favorite bookmarks. This tool was built by <a href="http://danvgar.co">Daniel Garcia (@danvgar)</a> as part of <a href="https://100devs.org/">100devs</a> to improve the sharing of agency tools and resources across tens of thousands of remote users. It is now shared with you for personal use or across your own organization as well!
+    <a href="https://colligo.vercel.app/">Colligo</a> is a full-stack web app for filtering, organizing, and sharing your favorite bookmarks. 
+    <br />
+  This tool was built by <a href="http://danvgar.co">Daniel Garcia (@danvgar)</a> as part of <a href="https://100devs.org/">100devs</a> to improve the sharing of agency tools and resources across tens of thousands of remote users. It is now shared with you for personal use or across your own organization as well!
     <br />
     <br />
     <br />
@@ -57,7 +59,9 @@
 
 ### Built With
 
-Colligo was built using the <a href="https://nextjs.org/">NextJS</a> framework, which includes <a href="https://react.dev/">React</a>, <a href="https://www.typescriptlang.org/">TypeScript</a>, and <a href="https://tailwindcss.com/">Tailwind</a> technologies. This app also heavily uses the <a href="https://mantine.dev/">Mantine UI</a> library for front-end development, as well as components from the <a href="https://nextjs.org/learn/dashboard-app">NextJS Financial Dashboard</a>.
+Colligo was built using the <a href="https://nextjs.org/">NextJS</a> framework, which includes <a href="https://react.dev/">React</a>, <a href="https://www.typescriptlang.org/">TypeScript</a>, and <a href="https://tailwindcss.com/">Tailwind</a> technologies. 
+
+This app uses the <a href="https://mantine.dev/">Mantine UI</a> library for front-end development, as well as components from the <a href="https://nextjs.org/learn/dashboard-app">NextJS Financial Dashboard</a>.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -167,7 +171,7 @@ Daniel Garcia - [@danvgar](https://twitter.com/danvgar) - danvgar@gmail.com
 - []()
 - []() -->
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
