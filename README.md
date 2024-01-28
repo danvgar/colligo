@@ -161,7 +161,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Daniel Garcia - [@danvgar](https://twitter.com/danvgar) - danvgar@gmail.com
+[Daniel Garcia (@danvgar)](https://danvgar.co/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
