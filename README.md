@@ -106,10 +106,10 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## Roadmap
 
 - [ ] MVP - A full stack CRUD app that allows creating, reading, updating, and deleting a database of links.
-- [ ] Read a link to the database
-- [ ] Add a link to the database
-- [ ] Remove a link from the database
-- [ ] Update a link from the database
+  - [ ] Read a link to the database
+  - [ ] Add a link to the database
+  - [ ] Remove a link from the database
+  - [ ] Update a link from the database
 - [ ] Feature 2
 - [ ] Feature 3
 
