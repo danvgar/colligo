@@ -123,8 +123,10 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - Dynamic link insertion
   - Only submit a URL, OpenGraph information is automatically populated into link.
 - Front-End Updates
+  - Need a logo
   - Link skeletons
   - Improved SideNav
+  - Add Demo GIF to README
 
 See the [open issues](https://github.com/danvgar/colligo/issues) for a full list of proposed features (and known issues).
 
