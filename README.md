@@ -13,7 +13,6 @@
       <a href="https://colligo.vercel.app/">Colligo</a> is a full-stack web app for filtering, organizing, and sharing your favorite bookmarks. This tool was built by <a href="http://danvgar.co">Daniel Garcia (@danvgar)</a> as part of <a href="https://100devs.org/">100devs</a> to improve the sharing of agency tools and resources across tens of thousands of remote users. It is now shared with you for personal use or across your own organization as well!
     <br />
     <br />
-
     <br />
     <a href="https://github.com/danvgar/colligo"><strong>Explore the docs »</strong></a>
     <br />
@@ -23,7 +22,6 @@
     <a href="https://github.com/danvgar/colligo/issues">Report Bug</a>
     ·
     <a href="https://github.com/danvgar/colligo/issues">Request Feature</a>
-
   </p>
 </div>
 
@@ -105,13 +103,28 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 ## Roadmap
 
-- [ ] MVP - A full stack CRUD app that allows creating, reading, updating, and deleting a database of links.
-  - [ ] Read a link to the database
-  - [ ] Add a link to the database
-  - [ ] Remove a link from the database
-  - [ ] Update a link from the database
-- [ ] Feature 2
-- [ ] Feature 3
+- MVP - A full stack CRUD app that allows creating, reading, updating, and deleting a database of links.
+  - ~~Read a link to the database~~
+  - Add a link to the database
+  - Remove a link from the database
+  - Update a link from the database
+- Filter by Tags
+  - Available filter options reduces based on whether displayed links contain those tags.
+  - Dynamic count within each tag of the number of links in filter that contain that tag.
+- Sort by Tags
+  - SideNav should already be sorted by number of links containing that tag.
+- User voting per link (upvote, downvote)
+  - Sort by votes
+- Duplicate link detection
+- Multiple Lists of links
+- Discussion comments per link
+  - Each link needs a distinct route then
+- User Authentication
+- Dynamic link insertion
+  - Only submit a URL, OpenGraph information is automatically populated into link.
+- Front-End Updates
+  - Link skeletons
+  - Improved SideNav
 
 See the [open issues](https://github.com/danvgar/colligo/issues) for a full list of proposed features (and known issues).
 
@@ -147,8 +160,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 ## Contact
 
 Daniel Garcia - [@danvgar](https://twitter.com/danvgar) - danvgar@gmail.com
-
-Project Link: [https://github.com/danvgar/colligo](https://github.com/danvgar/colligo)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
