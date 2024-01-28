@@ -1,31 +1,19 @@
-## This project uses the following additional technologies
-
-- Mantine
-- Shadcn
-- HeroIcons
-- Vercel Postgres SDK
-- dotenv
-- NextAuth
-- zod
-- bcrypt
-- UUID
-- Tabler
-
 <a name="readme-top"></a>
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/danvgar/colligo">
+  <!-- <a href="https://github.com/danvgar/colligo">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
+  </a> -->
 
 <h3 align="center">Colligo</h3>
 
   <p align="center">
-      [Colligo](https://colligo.vercel.app/) is a full-stack web app for filtering, organizing, and sharing your favorite bookmarks. This tool was built by [Daniel Garcia](@danvgar) as part of 100devs to improve the sharing of agency tools and resources across tens of thousands of remote users. It is now shared with you for personal use or across your own organization as well!
+      <a href="https://colligo.vercel.app/">Colligo</a> is a full-stack web app for filtering, organizing, and sharing your favorite bookmarks. This tool was built by <a href="http://danvgar.co">Daniel Garcia (@danvgar)</a> as part of <a href="https://100devs.org/">100devs</a> to improve the sharing of agency tools and resources across tens of thousands of remote users. It is now shared with you for personal use or across your own organization as well!
     <br />
-    Colligo was built using the [NextJS](https://nextjs.org/) framework, which includes [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), and [Tailwind](https://tailwindcss.com/) technologies. This app also heavily uses the [Mantine UI](https://mantine.dev/) library for front-end development, as well as components from the [NextJS Financial Dashboard](https://nextjs.org/learn/dashboard-app). 
+    <br />
+
     <br />
     <a href="https://github.com/danvgar/colligo"><strong>Explore the docs »</strong></a>
     <br />
@@ -35,6 +23,7 @@
     <a href="https://github.com/danvgar/colligo/issues">Report Bug</a>
     ·
     <a href="https://github.com/danvgar/colligo/issues">Request Feature</a>
+
   </p>
 </div>
 
@@ -74,8 +63,7 @@
 
 ### Built With
 
-- [![Next][Next.js]][Next-url]
-- [![React][React.js]][React-url]
+    Colligo was built using the <a href="https://nextjs.org/">NextJS</a> framework, which includes <a href="https://react.dev/">React</a>, <a href="https://www.typescriptlang.org/">TypeScript</a>, and <a href="https://tailwindcss.com/">Tailwind</a> technologies. This app also heavily uses the <a href="https://mantine.dev/">Mantine UI</a> library for front-end development, as well as components from the <a href="https://nextjs.org/learn/dashboard-app">NextJS Financial Dashboard</a>.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -118,10 +106,10 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## Roadmap
 
 - [ ] MVP - A full stack CRUD app that allows creating, reading, updating, and deleting a database of links.
- - [ ] Read a link to the database
- - [ ] Add a link to the database
- - [ ] Remove a link from the database
- - [ ] Update a link from the database
+- [ ] Read a link to the database
+- [ ] Add a link to the database
+- [ ] Remove a link from the database
+- [ ] Update a link from the database
 - [ ] Feature 2
 - [ ] Feature 3
 
