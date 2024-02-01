@@ -122,11 +122,13 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - User Authentication
 - Dynamic link insertion
   - Only submit a URL, OpenGraph information is automatically populated into link.
+  - Auto-tagging links?
 - Front-End Updates
   - Need a logo
   - Link skeletons
   - Improved SideNav
   - Add Demo GIF to README
+- Browser Extensions for auto-adding links
 
 See the [open issues](https://github.com/danvgar/colligo/issues) for a full list of proposed features (and known issues).
 
