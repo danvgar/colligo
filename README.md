@@ -1,9 +1,9 @@
 <a name="readme-top"></a>
 <!-- PROJECT LOGO -->
 <div align="center">
-  <!-- <a href="https://github.com/danvgar/colligo">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a> -->
+  <a href="https://github.com/danvgar/colligo">
+    <img src="site-preview.png" alt="Logo" width="80" height="80">
+  </a>
 <h3 align="center">Colligo</h3>
   <p align="center">
     <a href="https://colligo.vercel.app/">Colligo</a> is a full-stack web app for filtering, organizing, and sharing your favorite bookmarks. 
