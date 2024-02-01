@@ -1,9 +1,9 @@
 <a name="readme-top"></a>
 <!-- PROJECT LOGO -->
 <div align="center">
-  <!-- <a href="https://github.com/danvgar/colligo">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a> -->
+  <a href="https://github.com/danvgar/colligo">
+    <img src="site-preview.png" alt="Logo" width="80" height="80">
+  </a>
 <h3 align="center">Colligo</h3>
   <p align="center">
     <a href="https://colligo.vercel.app/">Colligo</a> is a full-stack web app for filtering, organizing, and sharing your favorite bookmarks. 
@@ -122,11 +122,13 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - User Authentication
 - Dynamic link insertion
   - Only submit a URL, OpenGraph information is automatically populated into link.
+  - Auto-tagging links?
 - Front-End Updates
   - Need a logo
   - Link skeletons
   - Improved SideNav
   - Add Demo GIF to README
+- Browser Extensions for auto-adding links
 
 See the [open issues](https://github.com/danvgar/colligo/issues) for a full list of proposed features (and known issues).
 
