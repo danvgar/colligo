@@ -2,7 +2,7 @@
 <!-- PROJECT LOGO -->
 <div align="center">
   <a href="https://github.com/danvgar/colligo">
-    <img src="site-preview.png" alt="Logo" width="80" height="80">
+    <img src="site-preview.png" alt="Logo" width="200" height="105">
   </a>
 <h3 align="center">Colligo</h3>
   <p align="center">
