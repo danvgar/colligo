@@ -26,26 +26,20 @@ export default async function LinksTable({
                 <div className="flex items-center justify-between border-b pb-4">
                   <div>
                     <div className="mb-2 flex items-center">
-                      <Image
+                      {/* <Image
                         src={link.image_url}
                         className="mr-2 rounded-full"
                         width={28}
                         height={28}
-                        alt={`${link.name}'s profile picture`}
-                      />
-                      <p>{link.name}</p>
+                        alt={`${link.title}'s profile picture`}
+                      /> */}
+                      <p>{link.title}</p>
                     </div>
-                    <p className="text-sm text-gray-500">{link.email}</p>
+                    <p className="text-sm text-gray-500">{link.description}</p>
                   </div>
-                  <LinkStatus status={link.status} />
+                  {/* <LinkStatus status={link.status} /> */}
                 </div>
                 <div className="flex w-full items-center justify-between pt-4">
-                  <div>
-                    <p className="text-xl font-medium">
-                      {formatCurrency(link.amount)}
-                    </p>
-                    <p>{formatDateToLocal(link.date)}</p>
-                  </div>
                   <div className="flex justify-end gap-2">
                     <UpdateLink id={link.id} />
                     <DeleteLink id={link.id} />
@@ -85,28 +79,22 @@ export default async function LinksTable({
                 >
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex items-center gap-3">
-                      <Image
+                      {/* <Image
                         src={link.image_url}
                         className="rounded-full"
                         width={28}
                         height={28}
-                        alt={`${link.name}'s profile picture`}
-                      />
-                      <p>{link.name}</p>
+                        alt={`${link.title}'s profile picture`}
+                      /> */}
+                      <p>{link.title}</p>
                     </div>
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
-                    {link.email}
+                    {link.description}
                   </td>
-                  <td className="whitespace-nowrap px-3 py-3">
-                    {formatCurrency(link.amount)}
-                  </td>
-                  <td className="whitespace-nowrap px-3 py-3">
-                    {formatDateToLocal(link.date)}
-                  </td>
-                  <td className="whitespace-nowrap px-3 py-3">
+                  {/* <td className="whitespace-nowrap px-3 py-3">
                     <LinkStatus status={link.status} />
-                  </td>
+                  </td> */}
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex justify-end gap-3">
                       <UpdateLink id={link.id} />

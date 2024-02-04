@@ -27,11 +27,10 @@ export type Link = {
 
 export type LinksTable = {
   id: string;
-  customer_id: string;
-  name: string;
-  email: string;
-  image_url: string;
-  date: string;
-  amount: number;
-  status: 'pending' | 'paid';
+  title: string;
+  url: string;
+  tags: string[];
+  description: string;
+  dateAdded: string;
+  votes: number;
 };

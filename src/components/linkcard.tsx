@@ -1,11 +1,11 @@
 'use client'
 
-import { fetchLinks } from '@/lib/data';
+import { fetchLatestLinks } from '@/lib/data';
 import { Card, Image, Text, Button, Group } from '@mantine/core';
 
 export default async function LinkCard() {
 
-    const links = await fetchLinks();
+    const links = await fetchLatestLinks();
     console.log(`LinkCard Links: ${links}`)
 
     return (
