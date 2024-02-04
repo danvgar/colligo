@@ -1,6 +1,5 @@
 import { sql } from '@vercel/postgres';
 import { Link, LinksTable } from './definitions';
-import { unstable_noStore as noStore } from 'next/cache';
 
 export async function fetchLatestLinks() {
   try {
@@ -20,12 +19,10 @@ export async function fetchFilteredLinks(
   query: string,
   currentPage: number,
 ) {
-  noStore();
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
   try {
     const links = await sql<LinksTable>`
       SELECT
-        links.id,
         links.title,
         links.url,
         links.tags,
@@ -34,13 +31,12 @@ export async function fetchFilteredLinks(
         links.votes
       FROM links
       WHERE
-        links.id ILIKE ${`%${query}%`} OR
         links.title ILIKE ${`%${query}%`} OR
         links.url ILIKE ${`%${query}%`} OR
-        links.tags ILIKE ANY (ARRAY[${`%${query}%`}]) OR
+        ${'%' + query + '%'} ILIKE ANY(links.tags) OR
         links.description ILIKE ${`%${query}%`} OR
         links.dateAdded::text ILIKE ${`%${query}%`} OR
-        links.votes::text ILIKE ${`%${query}%`} OR
+        links.votes::text ILIKE ${`%${query}%`}
       ORDER BY links.title DESC
       LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
     `;
@@ -48,6 +44,6 @@ export async function fetchFilteredLinks(
     return links.rows;
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Failed to fetch links.');
+    throw new Error(`Failed to fetch links. Error: ${error.message}`);
   }
 }
