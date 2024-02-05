@@ -2,9 +2,7 @@
 
 import {
   HomeIcon,
-  TrashIcon,
   PlusIcon,
-  PencilIcon
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -18,16 +16,6 @@ const navlinks = [
     name: 'Add Link',
     href: '/add',
     icon: PlusIcon,
-  },
-  {
-    name: 'Edit Link',
-    href: '/edit',
-    icon: PencilIcon,
-  },
-  {
-    name: 'Remove Link',
-    href: '/delete',
-    icon: TrashIcon,
   },
 ];
 
