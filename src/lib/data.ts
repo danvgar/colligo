@@ -45,9 +45,8 @@ export async function fetchFilteredLinks(
     console.log('Filtered Links:', JSON.stringify(links.rows, null, 2));
     return links.rows;
   } catch (error) {
-    console.error('Database Error:', error);
-    console.error('Failed Query:', error.query); // Log the failed query
-    throw new Error(`Failed to fetch links. Error: ${error.message}`);
+    console.error('Failed Query:', error); // Log the failed query
+    throw new Error(`Failed to fetch links. Error: ${error}`);
   }
 }
 
