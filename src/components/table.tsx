@@ -37,7 +37,6 @@ export default async function LinksTable({
                     </div>
                     <p className="text-sm text-gray-500">{link.description}</p>
                   </div>
-                  {/* <LinkStatus status={link.status} /> */}
                 </div>
                 <div className="flex w-full items-center justify-between pt-4">
                   <div className="flex justify-end gap-2">
@@ -52,22 +51,19 @@ export default async function LinksTable({
             <thead className="rounded-lg text-left text-sm font-normal">
               <tr>
                 <th scope="col" className="px-4 py-5 font-medium sm:pl-6">
-                  Customer
+                  Title
                 </th>
                 <th scope="col" className="px-3 py-5 font-medium">
-                  Email
+                  Description
                 </th>
                 <th scope="col" className="px-3 py-5 font-medium">
-                  Amount
+                  URL
                 </th>
                 <th scope="col" className="px-3 py-5 font-medium">
-                  Date
+                  Tags
                 </th>
                 <th scope="col" className="px-3 py-5 font-medium">
-                  Status
-                </th>
-                <th scope="col" className="relative py-3 pl-6 pr-3">
-                  <span className="sr-only">Edit</span>
+                  Actions
                 </th>
               </tr>
             </thead>
@@ -92,9 +88,12 @@ export default async function LinksTable({
                   <td className="whitespace-nowrap px-3 py-3">
                     {link.description}
                   </td>
-                  {/* <td className="whitespace-nowrap px-3 py-3">
-                    <LinkStatus status={link.status} />
-                  </td> */}
+                  <td className="whitespace-nowrap px-3 py-3">
+                    <a href={link.url}>{link.url}</a>
+                  </td>
+                  <td className="whitespace-nowrap px-3 py-3">
+                    {link.tags.join(", ")}
+                  </td>
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex justify-end gap-3">
                       <UpdateLink id={link.id} />

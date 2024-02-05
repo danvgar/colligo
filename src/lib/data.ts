@@ -23,6 +23,7 @@ export async function fetchFilteredLinks(
   try {
     const links = await sql<LinksTable>`
       SELECT
+        links.id,
         links.title,
         links.url,
         links.tags,
@@ -41,9 +42,11 @@ export async function fetchFilteredLinks(
       LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
     `;
 
+    console.log('Filtered Links:', JSON.stringify(links.rows, null, 2));
     return links.rows;
   } catch (error) {
     console.error('Database Error:', error);
+    console.error('Failed Query:', error.query); // Log the failed query
     throw new Error(`Failed to fetch links. Error: ${error.message}`);
   }
 }
