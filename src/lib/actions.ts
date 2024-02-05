@@ -12,15 +12,10 @@ import { redirect } from 'next/navigation';
 // ********************
 const FormSchema = z.object({
     id: z.string(),
-    customerId: z.string({
-        invalid_type_error: 'Please select a customer.',
-    }),
-    amount: z.coerce
-        .number()
-        .gt(0, { message: 'Please enter an amount greater than $0.' }),
-    status: z.enum(['pending', 'paid'], {
-        invalid_type_error: 'Please select a link status.',
-    }),
+    title: z.string(),
+    desc: z.string(),
+    url: z.string(),
+    tags: z.string(),
     date: z.string(),
 });
 
@@ -35,7 +30,6 @@ const CreateLink = FormSchema.omit({
 
 export type State = {
     errors?: {
-        customerId?: string[];
         amount?: string[];
         status?: string[];
     };
@@ -45,9 +39,10 @@ export type State = {
 export async function createLink(prevState: State, formData: FormData) {
     // Validate form using Zod
     const validatedFields = CreateLink.safeParse({
-        customerId: formData.get('customerId'),
-        amount: formData.get('amount'),
-        status: formData.get('status'),
+        title: formData.get('title'),
+        desc: formData.get('desc'),
+        url: formData.get('url'),
+        tags: formData.get('tags'),
     });
 
     // If form validation fails, return errors early. Otherwise, continue.
@@ -59,15 +54,14 @@ export async function createLink(prevState: State, formData: FormData) {
     }
 
     // Prepare data for insertion into the database
-    const { customerId, amount, status } = validatedFields.data;
-    const amountInCents = amount * 100;
+    const { linkID, title, desc, url, tags } = validatedFields.data;
     const date = new Date().toISOString().split('T')[0];
 
     // Insert data into the database
     try {
         await sql`
-        INSERT INTO links (customer_id, amount, status, date)
-        VALUES (${customerId}, ${amountInCents}, ${status}, ${date})
+        INSERT INTO links (id, title, url, tags, description, dateAdded)
+        VALUES (${linkID}, ${title}, ${desc}, ${url}, ${tags} ${date})
       `;
     } catch (error) {
         // If a database error occurs, return a more specific error.
@@ -97,7 +91,7 @@ export async function updateLink(
     formData: FormData,
 ) {
     const validatedFields = UpdateLink.safeParse({
-        customerId: formData.get('customerId'),
+        linkID: formData.get('linkID'),
         amount: formData.get('amount'),
         status: formData.get('status'),
     });
@@ -109,13 +103,12 @@ export async function updateLink(
         };
     }
 
-    const { customerId, amount, status } = validatedFields.data;
-    const amountInCents = amount * 100;
+    const { linkID, amount, status } = validatedFields.data;
 
     try {
         await sql`
         UPDATE links
-        SET customer_id = ${customerId}, amount = ${amountInCents}, status = ${status}
+        SET customer_id = ${linkID}, amount = ${amountInCents}, status = ${status}
         WHERE id = ${id}
       `;
     } catch (error) {
