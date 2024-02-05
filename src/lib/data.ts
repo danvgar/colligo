@@ -1,5 +1,5 @@
 import { sql } from '@vercel/postgres';
-import { Link, LinksTable } from './definitions';
+import { Link, LinksTable, LinkForm } from './definitions';
 
 export async function fetchLatestLinks() {
   try {
@@ -48,5 +48,29 @@ export async function fetchFilteredLinks(
     console.error('Database Error:', error);
     console.error('Failed Query:', error.query); // Log the failed query
     throw new Error(`Failed to fetch links. Error: ${error.message}`);
+  }
+}
+
+export async function fetchLinkById(id: string) {
+  try {
+    const data = await sql<LinkForm>`
+      SELECT
+        links.id,
+        links.title,
+        links.url,
+        links.tags,
+        links.description,
+      FROM links
+      WHERE links.id = ${id};
+    `;
+
+    const link = data.rows.map((link) => ({
+      ...link,
+    }));
+
+    return link[0];
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch invoice.');
   }
 }

@@ -34,3 +34,11 @@ export type LinksTable = {
   dateAdded: string;
   votes: number;
 };
+
+export type LinkForm = {
+  id: string;
+  title: string;
+  url: string;
+  tags: string[];
+  description: string;
+};
