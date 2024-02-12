@@ -1,5 +1,3 @@
-'use server';
-
 import { sql } from '@vercel/postgres';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
@@ -13,27 +11,24 @@ import { redirect } from 'next/navigation';
 // Create Links
 // ********************
 
-// export async function createLink() {
-//     // Prepare data for insertion into the database
-//     const date = new Date().toISOString().split('T')[0];
+export async function createLink(formData: FormData) {
+    'use server';
 
-//     // Insert data into the database
-//     try {
-//         await sql`
-//         INSERT INTO links (id, title, url, tags, description, dateAdded)
-//         VALUES (${linkID}, ${title}, ${desc}, ${url}, ${tags} ${date})
-//       `;
-//     } catch (error) {
-//         // If a database error occurs, return a more specific error.
-//         return {
-//             message: 'Database Error: Failed to Create Link.',
-//         };
-//     }
+    // Prepare data for insertion into the database
+    const date = new Date().toISOString().split('T')[0];
 
-//     // Revalidate the cache for the links page and redirect the user.
-//     revalidatePath('/');
-//     redirect('/');
-// }
+    const rawFormData = {
+        customerId: formData.get('customerId'),
+        amount: formData.get('amount'),
+        status: formData.get('status'),
+    };
+    // Test it out:
+    console.log(rawFormData);
+
+    // Revalidate the cache for the links page and redirect the user.
+    revalidatePath('/');
+    redirect('/');
+}
 
 
 // Update Links
