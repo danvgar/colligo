@@ -1,6 +1,9 @@
 import { PencilIcon, PlusIcon, TrashIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-import { deleteLink } from '@/lib/actions';
+
+// To-Do
+// ********************
+//  - Import CRUD functions from lib/actions.ts
 
 // ********************
 // Create Links
@@ -21,6 +24,8 @@ export function CreateLink() {
 // Update Links
 // ********************
 export function UpdateLink({ id }: { id: string }) {
+  // // To-Do: Link to CRUD Operation
+
   return (
     <Link
       href={`/${id}/edit`}
@@ -35,10 +40,12 @@ export function UpdateLink({ id }: { id: string }) {
 // Delete Links
 // ********************
 export function DeleteLink({ id }: { id: string }) {
-  const deleteLinkWithId = deleteLink.bind(null, id);
+  // To-Do: Link to CRUD Operation
 
   return (
-    <form action={deleteLinkWithId}>
+    <form
+      // action={deleteLinkWithId}
+    >
       <button className="rounded-md border p-2 hover:bg-gray-100">
         <span className="sr-only">Delete</span>
         <TrashIcon className="w-4" />

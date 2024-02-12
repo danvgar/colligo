@@ -3,7 +3,7 @@ import { UpdateLink, DeleteLink } from '@/components/buttons-backend';
 // import LinkStatus from '@/components/links/status';
 // import { formatDateToLocal, formatCurrency } from '@/lib/utils';
 import { fetchFilteredLinks } from '@/lib/data';
-import Button from '@/components/buttons-frontend';
+import Button from '@/components/mantine/buttons-frontend';
 
 export default async function LinksTable({
   query,

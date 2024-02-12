@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import Button from '@/components/buttons-frontend';
+import Button from '@/components/mantine/buttons-frontend';
 import { createLink } from '@/lib/actions';
 
 export default function Form() {
