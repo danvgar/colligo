@@ -1,6 +1,11 @@
+// Dependencies
+// **********
 import { sql } from '@vercel/postgres';
 import { Link, LinksTable, LinkForm } from './definitions';
 
+// Fetch Latest Links
+// Purpose: Grabs all links from Links Table in DB
+// **********
 export async function fetchLatestLinks() {
   try {
     const links = await sql<Link>`SELECT * FROM links`;
@@ -14,6 +19,9 @@ export async function fetchLatestLinks() {
   }
 }
 
+// Fetch Filtered Links
+// Purpose: Filters links based on search params and page number.
+// **********
 const ITEMS_PER_PAGE = 6;
 export async function fetchFilteredLinks(
   query: string,
@@ -50,6 +58,9 @@ export async function fetchFilteredLinks(
   }
 }
 
+// Fetch Latest Links
+// Purpose: Grabs all links from Links Table in DB
+// **********
 export async function fetchLinkById(id: string) {
   try {
     const data = await sql<LinkForm>`
