@@ -1,5 +1,5 @@
 // import Image from "next/image";
-import LinkCard from "@/components/linkcard";
+import LinkCard from "@/components/mantine/linkcard";
 import Search from "@/components/search";
 import Table from '@/components/table';
 import { CreateLink } from "@/components/buttons-backend"

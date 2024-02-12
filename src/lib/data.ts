@@ -10,7 +10,7 @@ export async function fetchLatestLinks() {
   try {
     const links = await sql<Link>`SELECT * FROM links`;
 
-    console.log('Links:', JSON.stringify(links.rows, null, 2));
+    // console.log('Links:', JSON.stringify(links.rows, null, 2));
     return links.rows;
 
   } catch (error) {
@@ -50,7 +50,7 @@ export async function fetchFilteredLinks(
       LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
     `;
 
-    console.log('Filtered Links:', JSON.stringify(links.rows, null, 2));
+    // console.log('Filtered Links:', JSON.stringify(links.rows, null, 2));
     return links.rows;
   } catch (error) {
     console.error('Failed Query:', error); // Log the failed query
