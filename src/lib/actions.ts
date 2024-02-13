@@ -6,6 +6,7 @@ import { redirect } from 'next/navigation';
 // ********************
 //  - Form Validation
 //  - User Authentication + Authorization
+//  - Add list functionality
 
 
 // Create Links
@@ -18,12 +19,12 @@ export async function createLink(formData: FormData) {
     const date = new Date().toISOString().split('T')[0];
 
     const rawFormData = {
-        customerId: formData.get('customerId'),
-        amount: formData.get('amount'),
-        status: formData.get('status'),
+        // listID: formData.get('listID'),
+        url: formData.get('url'),
+        title: formData.get('title'),
+        desc: formData.get('desc'),
+        tags: formData.get('tags'),
     };
-    // Test it out:
-    console.log(rawFormData);
 
     // Revalidate the cache for the links page and redirect the user.
     revalidatePath('/');
