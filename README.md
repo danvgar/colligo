@@ -8,9 +8,6 @@
   <p align="center">
     <a href="https://colligo.vercel.app/">Colligo</a> is a full-stack web app for filtering, organizing, and sharing your favorite bookmarks. 
     <br />
-  This tool was built by <a href="http://danvgar.co">Daniel Garcia (@danvgar)</a> as part of <a href="https://100devs.org/">100devs</a> to improve the sharing of agency tools and resources across tens of thousands of remote users. It is now shared with you for personal use or across your own organization as well!
-    <br />
-    <br />
     <br />
     <a href="https://github.com/danvgar/colligo"><strong>Explore the docs »</strong></a>
     <br />
