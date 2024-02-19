@@ -19,7 +19,7 @@ const FormSchema = z.object({
     url: z.string().url(),
     title: z.string().max(15),
     desc: z.string().max(30),
-    tags: z.string(), // Consider using enum with an array of existing tags. 
+    tags: z.array(z.string()), // Consider using enum with an array of existing tags. 
     date: z.string(),
 })
 
@@ -38,18 +38,17 @@ export async function createLink(formData: FormData) {
         url: formData.get('url'),
         title: formData.get('title'),
         desc: formData.get('desc'),
-        tags: formData.get('tags'), // Currently broken
+        tags: formData.get('tags').split(",").map(tag => tag.trim()), 
     })
 
     // Create date for time link was created
     const date = new Date().toISOString().split('T')[0];
 
     // Split tags string into comma separated, trimmed elements of an array.
-    const tagsArr: string[] = tags.split(",").map(tag => tag.trim());
 
     await sql`
     INSERT INTO links (url, title, description, tags)
-    VALUES (${url}, ${title}, ${desc}, ARRAY[${tagsArr.map(tag => sql.tag`${tag}`).join(',')}])
+    VALUES (${url}, ${title}, ${desc}, ${tags})
   `;
 
     // Revalidate the cache for the links page and redirect the user.
