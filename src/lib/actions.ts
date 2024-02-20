@@ -30,19 +30,19 @@ const CreateLink = FormSchema.omit({
     date: true 
 })
 
-export type State = {
-    errors?: {
-        url?: string[];
-        title?: string[];
-        desc?: string[];
-        tags?: string[];
-    };
-    message?: string | null;
-};
+// export type State = {
+//     errors?: {
+//         url?: string[];
+//         title?: string[];
+//         desc?: string[];
+//         tags?: string[];
+//     };
+//     message?: string | null;
+// };
 
 // Create Links
 // ********************
-export async function createLink(prevState: State, formData: FormData) {
+export async function createLink(formData: FormData) {
 
     const tagStr = formData.get('tags')
     const tags: string[] = typeof tagStr === 'string' ? tagStr.split(",").map((tag: string) => tag.trim()) : [];
