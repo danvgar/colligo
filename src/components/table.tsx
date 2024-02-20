@@ -19,6 +19,7 @@ export default async function LinksTable({
       <div className="inline-block min-w-full align-middle">
         <div className="rounded-lg bg-gray-50 p-2 md:pt-0">
           <div className="md:hidden">
+            {/* Start of Link Mapping */}
             {links?.map((link) => (
               <div
                 key={link.id}
@@ -104,6 +105,8 @@ export default async function LinksTable({
                   </td>
                 </tr>
               ))}
+              {/* End of Link Mapping */}
+
             </tbody>
           </table>
         </div>
