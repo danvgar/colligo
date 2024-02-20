@@ -1,3 +1,4 @@
+'use server';
 // To-Do
 // ********************
 //  - Form Validation
@@ -24,21 +25,36 @@ const FormSchema = z.object({
 })
 
 // Schema Variation: Ignore id and date validation.
-const CreateLink = FormSchema.omit({ id: true, date: true })
+const CreateLink = FormSchema.omit({ 
+    id: true, 
+    date: true 
+})
+
+export type State = {
+    errors?: {
+        url?: string[];
+        title?: string[];
+        desc?: string[];
+        tags?: string[];
+    };
+    message?: string | null;
+};
 
 // Create Links
 // ********************
-export async function createLink(formData: FormData) {
-    'use server';
+export async function createLink(prevState: State, formData: FormData) {
+
+    const tagStr = formData.get('tags')
+    const tags: string[] = typeof tagStr === 'string' ? tagStr.split(",").map((tag: string) => tag.trim()) : [];
 
 
     // If formData passes Zod validation parsing, toss it into destructured object variables.
-    const { url, title, desc, tags } = CreateLink.parse({
+    const { url, title, desc } = CreateLink.parse({
         // listID: formData.get('listID'),
         url: formData.get('url'),
         title: formData.get('title'),
         desc: formData.get('desc'),
-        tags: formData.get('tags').split(",").map(tag => tag.trim()), 
+        tags: tags,
     })
 
     // Create date for time link was created
@@ -46,9 +62,12 @@ export async function createLink(formData: FormData) {
 
     // Split tags string into comma separated, trimmed elements of an array.
 
+    const tagsArrayLiteral = `{${tags.map(tag => `"${tag}"`).join(',')}}`;
+
+
     await sql`
     INSERT INTO links (url, title, description, tags)
-    VALUES (${url}, ${title}, ${desc}, ${tags})
+    VALUES (${url}, ${title}, ${desc}, ${tagsArrayLiteral})
   `;
 
     // Revalidate the cache for the links page and redirect the user.
@@ -83,12 +102,12 @@ export async function createLink(formData: FormData) {
 // Delete Links
 // ********************
 
-// export async function deleteLink(id: string) {
-//     try {
-//         await sql`DELETE FROM links WHERE id = ${id}`;
-//         revalidatePath('/');
-//         return { message: 'Deleted Link.' };
-//     } catch (error) {
-//         return { message: 'Database Error: Failed to Delete Link.' };
-//     }
-// }
+export async function deleteLink(id: string) {
+    try {
+        await sql`DELETE FROM links WHERE id = ${id}`;
+        revalidatePath('/');
+        return { message: 'Deleted Link.' };
+    } catch (error) {
+        return { message: 'Database Error: Failed to Delete Link.' };
+    }
+}
