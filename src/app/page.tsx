@@ -1,3 +1,5 @@
+"use client";
+
 // import Image from "next/image";
 import LinkCard from "@/components/mantine/linkcard";
 import Search from "@/components/search";
@@ -13,6 +15,7 @@ export default async function Page({ searchParams, }:
   const currentPage = Number(searchParams?.page) || 1;
 
   const handleTagClick = (tagValue: string) => {
+    console.log("Tag clicked: ", tagValue)
     setQuery(tagValue);
     // Perform the search operation with tagValue
   }

@@ -97,8 +97,9 @@ export default async function LinksTable({
                     <a href={link.url}>{link.url}</a>
                   </td>
                   <td className="flex flex-wrap px-3 py-3">
-                    {link.tags.map(tag => (
+                    {link.tags.map((tag, index) => (
                       <Button
+                        key={index}
                         type="button"
                         className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none rounded-full border border-gray-200 hover:bg-gray-100 hover:text-green-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
                         onClick={() => onTagClick(tag)}
