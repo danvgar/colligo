@@ -90,7 +90,15 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+_Note: This tool is in active development_
+
+The best use of his tool is to handle easy lookup and sharing of resources amongst communities and colleagues.
+
+Have you amassed an incredible bookmark library of coding tools and resources, and you or your friend are just looking for the ones that focus on React and beginner level tutorials? Filter your own list of bookmarks by tags such as `React` and `Tutorials` and `Beginner`, and share your filtered list as a URL to colleagues. 
+
+Each list has a unique UUIDv4 URL, and filtered search parameters allow you to share your list pre-filtered to others. 
+
+Is your friend 
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
@@ -113,10 +121,14 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - User voting per link (upvote, downvote)
   - Sort by votes
 - Duplicate link detection
-- Multiple Lists of links
+- List functionality
+  - Multiple Lists of links
 - Discussion comments per link
   - Each link needs a distinct route then
 - User Authentication
+- User Authorization
+  - Lists can be set as public or private
+  - Lists can be shared with specific users only
 - Dynamic link insertion
   - Only submit a URL, OpenGraph information is automatically populated into link.
   - Auto-tagging links?
@@ -127,25 +139,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
   - Add Demo GIF to README
   - Table Toggle vs Card View Toggle
 - Browser Extensions for auto-adding links
-
-See the [open issues](https://github.com/danvgar/colligo/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
-
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+- Quick add
+  - Quickly add links others have sent you to your own lists
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
